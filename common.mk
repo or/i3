@@ -1,5 +1,5 @@
 UNAME=$(shell uname)
-DEBUG=1
+DEBUG=0
 COVERAGE=0
 INSTALL=install
 LN=ln
@@ -36,7 +36,7 @@ ifeq ($(DEBUG),1)
 # Extended debugging flags, macros shall be available in gcc
 CFLAGS ?= -pipe -gdwarf-2 -g3
 else
-CFLAGS ?= -pipe -O2 -freorder-blocks-and-partition
+CFLAGS ?= -pipe -O3 -march=native -mtune=native -freorder-blocks-and-partition
 endif
 
 # Default LDFLAGS that users should be able to override
