@@ -84,6 +84,7 @@ long get_dpi_value(void) {
  *
  */
 int logical_px(const int logical) {
+    return logical;
     if (root_screen == NULL) {
         /* Dpi info may not be available when parsing a config without an X
          * server, such as for config file validation. */
